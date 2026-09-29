@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+.next-verify/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# hardhat
+artifacts/
+cache/
+typechain-types/
+out/
+cache_forge/
+coverage/
+coverage.json
+
+# env (never commit keys)
+.env
+.env.*
+!.env.example
+
+# local demo wallets (npm run demo:setup) - test keys, never commit
+.demo-wallets.local.json
+DEMO-WALLETS.local.md
+
+# misc
+.DS_Store
+*.log
+.vercel

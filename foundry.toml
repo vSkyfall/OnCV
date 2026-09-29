@@ -1,0 +1,17 @@
+# Optional Foundry setup (Hardhat is the primary toolchain; see package.json scripts).
+#   forge build
+#   forge create contracts/ProofSkill.sol:ProofSkill --rpc-url fuji --private-key $PRIVATE_KEY --constructor-args <owner>
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["node_modules"]
+test = "test/foundry"
+cache_path = "cache_forge"
+solc_version = "0.8.24"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 200
+remappings = ["@openzeppelin/=node_modules/@openzeppelin/"]
+
+[rpc_endpoints]
+fuji = "https://api.avax-test.network/ext/bc/C/rpc"

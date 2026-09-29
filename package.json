@@ -1,0 +1,65 @@
+{
+  "name": "oncv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "onCV - Verifiable On-Chain Credentials & Attendance Infrastructure (Avalanche)",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "dev:webpack": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "contracts:compile": "hardhat compile",
+    "contracts:test": "hardhat test",
+    "contracts:abi": "hardhat run scripts/export-abi.js",
+    "deploy:fuji": "hardhat run scripts/deploy.js --network fuji",
+    "organizer:add": "hardhat run scripts/add-organizer.js --network fuji",
+    "admin:transfer": "hardhat run scripts/transfer-admin.js --network fuji",
+    "demo:node": "node scripts/demo-node.js",
+    "demo:setup": "hardhat run scripts/local-demo.js --network localhost"
+  },
+  "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.2.11",
+    "@tanstack/react-query": "^5.103.3",
+    "@turf/distance": "^7.4.0",
+    "@turf/helpers": "^7.4.0",
+    "canvas-confetti": "^1.9.4",
+    "framer-motion": "^13.4.4",
+    "geist": "^1.7.2",
+    "jsqr": "^1.4.0",
+    "lucide-react": "^1.48.0",
+    "next": "^15.5.26",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "viem": "^2.56.9",
+    "wagmi": "^2.19.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.2",
+    "@nomicfoundation/hardhat-ethers": "^3.1.3",
+    "@nomicfoundation/hardhat-network-helpers": "^1.1.2",
+    "@nomicfoundation/hardhat-verify": "^2.1.3",
+    "@openzeppelin/contracts": "^5.6.1",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^22.20.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.6.1",
+    "chai": "^4.5.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.26",
+    "ethers": "^6.17.0",
+    "hardhat": "^2.29.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "cuer": {
+      "qr": "0.5.5"
+    }
+  }
+}

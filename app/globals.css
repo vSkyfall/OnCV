@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #09090b;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Accent family from the red panda logo; see the brand scale in tailwind.config.ts. */
+::selection {
+  background: rgba(221, 49, 54, 0.3);
+  color: #fafafa;
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Surfaces */
+  .card {
+    @apply rounded-xl border border-zinc-800 bg-zinc-900/40 shadow-card;
+  }
+
+  .card-hover {
+    @apply transition-colors duration-200 hover:border-brand-600/40 hover:bg-zinc-900/60;
+  }
+
+  .panel-header {
+    @apply flex items-center justify-between gap-4 border-b border-zinc-800 px-5 py-4;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-lg px-3.5 text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  /* Primary stays near-white for contrast; its hover warms towards the logo's peach. */
+  .btn-primary {
+    @apply btn bg-zinc-50 text-zinc-950 hover:bg-brand-50;
+  }
+
+  .btn-accent {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600;
+  }
+
+  .btn-secondary {
+    @apply btn border border-zinc-800 bg-zinc-900 text-zinc-200 hover:border-brand-600/50 hover:bg-zinc-800/70 hover:text-zinc-50;
+  }
+
+  .btn-ghost {
+    @apply btn text-zinc-400 hover:bg-brand-500/10 hover:text-brand-100;
+  }
+
+  .btn-sm {
+    @apply h-8 px-2.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply h-11 rounded-lg px-5 text-[15px];
+  }
+
+  /* Forms */
+  .input {
+    @apply h-9 w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 text-sm text-zinc-100 transition-colors placeholder:text-zinc-600 focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/15 disabled:opacity-50;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-medium text-zinc-400;
+  }
+
+  /* Typography & labels */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-md border border-zinc-800 bg-zinc-900/70 px-2 py-0.5 text-xs font-medium text-zinc-400;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs text-zinc-500;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-b from-zinc-50 to-zinc-400 bg-clip-text text-transparent;
+  }
+
+  .accent-dot {
+    @apply inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500;
+  }
+
+  .skeleton {
+    @apply animate-shimmer rounded-md bg-[linear-gradient(90deg,rgba(255,255,255,0.02)_0%,rgba(255,255,255,0.07)_50%,rgba(255,255,255,0.02)_100%)] bg-[length:200%_100%];
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .mask-fade-b {
+    mask-image: radial-gradient(ellipse at top, black 20%, transparent 70%);
+  }
+}
+
+/* RainbowKit modal uses the app typeface */
+[data-rk] [role="dialog"] {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
